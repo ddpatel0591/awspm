@@ -4,7 +4,7 @@ if(!isset($_SESSION['username'])){
   header("location:login.php");
 }
 print_r($_POST);
-$conn = mysqli_connect("localhost","root","","AWS_NITIN");
+$conn = mysqli_connect("localhost","root","","aws_pms");
   $sql = "SELECT task.task_id,task.task_title,projects.projectname,Reagister.First_name,task.description,task.dt,task.status FROM task
   LEFT JOIN projects ON task.project = projects.projectid
   LEFT JOIN Reagister ON task.employe = Reagister.id"; 

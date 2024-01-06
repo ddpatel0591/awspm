@@ -4,7 +4,7 @@ session_start();
 if(!isset($_SESSION['username'])){
   header("location:login.php");
 }
-$conn = mysqli_connect("localhost","root","","AWS_NITIN");
+$conn = mysqli_connect("localhost","root","","aws_pms");
 
 extract($_POST);
         

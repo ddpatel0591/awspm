@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost","root","","AWS_NITIN");
+$conn = mysqli_connect("localhost","root","","aws_pms");
 
 $userid = $_POST['id'];
 

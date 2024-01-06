@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect("localhost","root","","AWS_NITIN");
+$conn = mysqli_connect("localhost","root","","aws_pms");
 
 extract($_POST);
 $dt = date("d M Y h:i:sa");

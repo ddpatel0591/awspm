@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION['username'])){
   header("location:login.php");
 }
-$conn = mysqli_connect("localhost","root","","AWS_NITIN");
+$conn = mysqli_connect("localhost","root","","aws_pms");
 if(isset($_POST['selector_id'])){
   $task_id = $_POST['taskid'];
   $sql1 = "UPDATE task SET status = ".$_POST['selector_id']." WHERE task_id = ".$task_id;

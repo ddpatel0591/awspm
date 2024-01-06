@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect("localhost","root","","AWS_NITIN");
+$conn = mysqli_connect("localhost","root","","aws_pms");
 
     $sql = "select * from Reagister";
 

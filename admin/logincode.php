@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$conn = mysqli_connect("localhost","root","","AWS_NITIN");
+$conn = mysqli_connect("localhost","root","","aws_pms");
 
 if(isset($_POST['username'])){
     $query = "SELECT id,role FROM Reagister WHERE Username = '".$_POST['username']."' AND Password = '".$_POST['password']."'";
