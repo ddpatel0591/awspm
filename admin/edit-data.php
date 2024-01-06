@@ -13,7 +13,7 @@ if(mysqli_num_rows($result)> 0){
     while($row = mysqli_fetch_assoc($result)){
         $output .= '<div class="modal fade">
         <div class="modal-dialog">
-          <div class="modal-content">
+          <div class="modal-content" id="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">Edit User</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">

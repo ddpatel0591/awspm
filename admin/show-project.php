@@ -22,20 +22,21 @@ if(mysqli_num_rows($result)> 0){
                 <th>projectname</th>
                 <th>Action</th>
                 </tr>';
+                
     $counter= (($page - 1)* $limit)+1;
     while($row = mysqli_fetch_assoc($result)){
         $output .= "<tr>
         <td>".$counter."</td>
-        <td>".$row['projectname']."</td>
+        <td class='projectname'>".$row['projectname']."</td>
         <td>
-        <button class='btn btn-info btn-sm' data-eid='".$row['projectid']."'>Edit</button>&nbsp;&nbsp;&nbsp;
+        <button data-toggle='modal' data-target='#AdduserModal' class='btn btn-info btn-sm' data-eid='".$row['projectid']."'>Edit</button>&nbsp;&nbsp;&nbsp;
         <button class='btn btn-danger btn-sm' data-id=".$row['projectid'].">Delete</button>
         </td>
       </tr>";
       $counter++;
      
     }
-    $output .= '<table>';
+    $output .= '</table>';
 
     $sql_totle = "SELECT * FROM projects";
     $record = mysqli_query($conn, $sql_totle);

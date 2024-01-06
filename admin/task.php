@@ -47,7 +47,7 @@ include("include/sidebar.php");
              
              
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer">add
         <button type="submit" id="submit" name="submit" class="btn btn-primary">Save</button>
       </div>
     </form>
@@ -131,6 +131,27 @@ include("include/sidebar.php");
                 })
               }
             });
+
+            function openEditModal() {
+              // Make an asynchronous request to edit-data.php
+              $.ajax({
+                  url: 'edit-data.php',
+                  method: 'GET',
+                  success: function(data) {
+                      // Populate the modal content with the data received
+                      $('#modalContent').html(data);
+                      // Display the modal and overlay
+                      $('#myModal, #overlay').css('display', 'block');
+                  },
+                  error: function() {
+                      alert('Error loading data from edit-data.php');
+                  }
+              });
+          }
+
+          function closeModal() {
+              $('#myModal, #overlay').css('display', 'none');
+          }
 // fetch dynemic project in task form -------------------             
               $.ajax({
               url: "fetch-project.php",
