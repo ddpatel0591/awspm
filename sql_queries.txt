@@ -1,0 +1,13 @@
+deepak Date- 06-1-2024
+
+CREATE TABLE `attendance` (
+  `atd_id` int(11) NOT NULL,
+  `emp_id` int(11) NOT NULL,
+  `emp_name` varchar(255) NOT NULL,
+  `str_date` date NOT NULL,
+  `end_date` date NOT NULL,
+  `str_time` time NOT NULL,
+  `end_time` time NOT NULL,
+  `sub_report` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
