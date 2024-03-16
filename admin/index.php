@@ -43,12 +43,12 @@ include("include/topbar.php");
             <input type="hidden" id= "emp_id" name="emp_id" value="<?php echo $_SESSION['id']; ?>">
             <input type="hidden" id= "emp_name" name="emp_name" value="<?php echo $_SESSION['username']; ?>">
 
-            <button type="submit" name="submit" class="day_st">Day Start</button>
-         
-                     
+            <button type="submit" name="submit" class="day_st">Day Start</button>  
+            <button type="submit" name="submit" class="day_en">Day End</button>   
 
         </div>
     </section>
+    
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
@@ -128,7 +128,10 @@ include("include/footar.php");
 <script>
 
 $(document).ready(function(){
-$(".day_st").click(function(){
+$(".day_st").click(function()
+
+
+{
   
   var emp_id = $("#emp_id").val();
   //alert (emp_id);
@@ -137,6 +140,40 @@ $(".day_st").click(function(){
   if(emp_id != '' && emp_name != ''){
     $.ajax({
       url:"time.php",
+      type: "POST",
+      data: {emp_id:emp_id,emp_name:emp_name},
+      success: function(data){
+       if(data == "no"){
+        alert("wrong data"); 
+       }else{
+        // window.location.replace("task.php");
+       }
+      }
+    });
+    return false;
+  }else{
+    alert("all filed are required");
+  }
+  return false;
+});
+});
+
+</script>
+<script>
+
+$(document).ready(function(){
+$(".day_en").click(function()
+
+
+{
+  
+  var emp_id = $("#emp_id").val();
+  //alert (emp_id);
+  var emp_name = $("#emp_name").val();
+  var is_error = '';
+  if(emp_id != '' && emp_name != ''){
+    $.ajax({
+      url:"end.php",
       type: "POST",
       data: {emp_id:emp_id,emp_name:emp_name},
       success: function(data){

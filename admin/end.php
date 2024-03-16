@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 // Assuming you've established a database connection
 $servername = "localhost";
 $username = "root";
@@ -15,15 +15,13 @@ if ($conn->connect_error) {
 if (isset($_POST['emp_id']) && isset($_POST['emp_name'])) {
     $id = $_POST['emp_id'];
     $name = $_POST['emp_name'];
-    
-    // $time= date('H:i:s');
     $time = new DateTime();
     date_default_timezone_set("Asia/Kolkata");  
      $time = date('H:i:s');
      $date = date('Y-m-d');
-         $sql = "INSERT INTO  attendance (emp_id, emp_name, str_date, str_time) VALUES ('$id', '$name','$date','$time')";
   
-  
+    // $sql = "UPDATE attendance SET end_date = $date , end_time = $time WHERE emp_id = '$id' , emp_name = '$name'";
+    $sql=" UPDATE `attendance` SET `emp_id`=' $id ',`emp_name`='$name',`end_date`=' $date',`end_time`='$time' WHERE  $id";
     if ($conn->query($sql) === TRUE) {
         echo "Data inserted successfully";
     } else {
